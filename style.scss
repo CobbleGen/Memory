@@ -1,0 +1,113 @@
+body {
+    background-image: linear-gradient(rgb(149, 226, 222), rgb(84, 240, 232));
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#scores {
+    margin-left: 0%;
+    #highscore {
+        border: darkcyan 5px solid;
+        border-radius: 15px;
+        padding: 15px;
+        text-align: center;
+        background-color: cyan;
+        h1 {
+            margin: 0;
+            font-family: roboto;
+            font-size: 3rem;
+        }
+        h2 {
+            margin: 0;
+        }
+    }
+    
+    h2 {
+        font-family: roboto;
+        font-size: 2.5rem;
+    }
+
+    #restart-btn {
+        background-color: rgb(0, 255, 255);
+        border: black 3px solid;
+        border-radius: 25px;
+        font-size: 2rem;
+        font-family: roboto;
+        text-align: center;
+        padding: 0.5rem;
+        transition: all 0.3s ease;
+        width: 75%;
+        margin: auto;
+        opacity: 0%;
+        pointer-events: none;
+
+        &:hover {
+            border-color: rgb(206, 206, 206);
+            color: rgb(206, 206, 206);
+            cursor: pointer;
+        }
+    }
+}
+
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 75%;
+    margin-top: 5rem;
+}
+
+.outer-card {
+    background-color: transparent;
+    width: 185px;
+    height: 185px;
+    perspective: 1000px;
+    margin: 1rem;
+
+    .inner-card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+
+        .card, .backside {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: darkcyan 5px solid;
+            border-radius: 5%;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        
+        .matched {
+            transition: all 1s ease;
+            border-color: rgb(0, 250, 0);
+        }
+
+        .card {
+            background-color: rgb(0, 197, 197);
+            transform: rotateY(180deg);
+        }
+
+        .backside {
+            background-color: rgb(44, 44, 248);
+            &:hover {
+                border-color: rgb(0, 81, 255);
+                cursor: pointer;
+            }
+        }
+    }
+}
